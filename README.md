@@ -1,3 +1,5 @@
+Curso gerado com GPT-4
+
 ## Conceitos básicos de Arduino/C++
 
 ### Sintaxe:
