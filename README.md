@@ -1,6 +1,6 @@
 - **Curso gerado com GPT-4**
 
-Navegue pela Wiki: https://github.com/simplyYan/LeArdur/wiki/Curso
+Navegue Melhor pela Wiki: https://github.com/simplyYan/LeArdur/wiki/Curso
 
 ## Conceitos básicos de Arduino/C++
 
