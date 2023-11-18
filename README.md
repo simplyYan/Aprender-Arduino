@@ -2,6 +2,8 @@
 
 Navegue Melhor pela Wiki: https://github.com/simplyYan/LeArdur/wiki/Curso
 
+Para programar Arduino (com C++), é necessário usar a Arduino IDE. Você pode instalar ela para Windows, Linux e macOS: https://www.arduino.cc/en/software. Mas de forma provisória, você pode usar o editor online (web): https://create.arduino.cc/editor. (A versão web é somente para testar, use a versão nativa, é grátis e dísponivel para seu sistema)
+
 ## Conceitos básicos de Arduino/C++
 
 ### Sintaxe:
