@@ -2547,3 +2547,59 @@ void loop() {
 - Você pode criar sequências mais complexas para tocar diferentes melodias, ajustando as frequências e os tempos de duração das notas.
 
 Após carregar o código no Arduino e conectar o buzzer, ele reproduzirá a sequência de notas musicais definidas no código. Isso é um exemplo básico de como criar músicas simples usando um buzzer com o Arduino.
+
+### Comunicação entre Arduino e Smartphone (bluetooth)
+Para estabelecer a comunicação entre um smartphone e o Arduino via Bluetooth, usaremos um módulo Bluetooth como o HC-05/HC-06. Aqui está um exemplo básico que permite enviar dados do smartphone para o Arduino via Bluetooth.
+
+### Materiais Necessários:
+
+1. **Módulo Bluetooth (HC-05 ou HC-06).**
+2. **Placa Arduino.**
+3. **Fios de conexão.**
+
+### Montagem do Circuito:
+
+Conecte o módulo Bluetooth ao Arduino:
+
+- **RX do módulo Bluetooth:** Conecte ao pino TX do Arduino.
+- **TX do módulo Bluetooth:** Conecte ao pino RX do Arduino.
+- **VCC do módulo Bluetooth:** Conecte ao 5V do Arduino.
+- **GND do módulo Bluetooth:** Conecte ao GND do Arduino.
+
+### Código Exemplo:
+
+Este é um código simples que recebe dados enviados do smartphone via Bluetooth e os exibe no Monitor Serial.
+
+```cpp
+#include <SoftwareSerial.h>
+
+SoftwareSerial bluetooth(2, 3); // Define os pinos de RX e TX para comunicação com o módulo Bluetooth
+
+void setup() {
+  Serial.begin(9600); // Inicia a comunicação serial para o Monitor Serial
+  bluetooth.begin(9600); // Inicia a comunicação serial para o módulo Bluetooth
+}
+
+void loop() {
+  if (bluetooth.available()) { // Verifica se há dados disponíveis para leitura
+    char dado = bluetooth.read(); // Lê o dado recebido
+    Serial.print("Dado recebido: ");
+    Serial.println(dado); // Exibe o dado no Monitor Serial
+  }
+}
+```
+
+### Aplicativo no Smartphone:
+
+Você precisará de um aplicativo de terminal serial ou Bluetooth para enviar dados para o módulo Bluetooth do Arduino.
+
+1. Baixe e instale um aplicativo de terminal serial ou Bluetooth em seu smartphone (por exemplo, "Serial Bluetooth Terminal" para Android ou "LightBlue" para iOS).
+2. Conecte-se ao módulo Bluetooth (nome do dispositivo geralmente é "HC-05" ou "HC-06").
+3. Envie os dados desejados através do aplicativo.
+
+### Observações:
+
+- Este é um exemplo simples de comunicação unidirecional (do smartphone para o Arduino) via Bluetooth.
+- O código pode ser expandido para realizar ações com base nos dados recebidos do smartphone.
+
+Após carregar o código no Arduino e conectar o módulo Bluetooth, use o aplicativo em seu smartphone para enviar dados para o Arduino. Os dados enviados serão exibidos no Monitor Serial do Arduino IDE. Este é um ponto de partida para entender a comunicação básica entre um smartphone e o Arduino via Bluetooth.
